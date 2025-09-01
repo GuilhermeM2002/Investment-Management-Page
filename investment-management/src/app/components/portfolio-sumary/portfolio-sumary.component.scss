@@ -1,0 +1,14 @@
+@use "../../../styles/variables.scss" as v;
+
+.portfolio-sumary-container{
+    width: 240px;
+    height: 120px;
+    padding: 0px 0px 0px 28px ;
+    font-size: 20px;
+    color: v.$color-text-primary;
+
+    .value{
+        font-weight: bold;
+        font-size: 32px;
+    }
+}

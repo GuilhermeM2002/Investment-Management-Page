@@ -1,0 +1,12 @@
+@use "../../../styles/variables" as v;
+
+div{
+    display: flex;
+    gap: 52px;
+}
+h1{
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 36px;
+    color: v.$color-text-primary;
+}

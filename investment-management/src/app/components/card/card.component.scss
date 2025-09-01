@@ -1,0 +1,7 @@
+@use "../../../styles/variables.scss" as v;
+.custom-card {
+    border: 1px solid;
+    border-color: v.$color-border;
+    border-radius: 12px;
+    background-color: v.$color-background;
+}
