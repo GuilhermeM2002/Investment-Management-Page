@@ -1,8 +1,14 @@
 @use "../../../styles/variables" as v;
 
-div{
+.dashboard-container {
     display: flex;
-    gap: 52px;
+    flex-direction: column;
+    gap: 56px;
+
+    .portfolio-sumary{
+        display: flex;
+        gap: 52px;
+    }
 }
 h1{
     font-size: 48px;

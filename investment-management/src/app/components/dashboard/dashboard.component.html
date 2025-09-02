@@ -1,6 +1,12 @@
 <h1>Dashboard</h1>
 <div class="dashboard-container">
-    <app-portfolio-sumary title="Valor Total" value="$50,000"></app-portfolio-sumary>
-    <app-portfolio-sumary title="Variação" value="+5,25%"></app-portfolio-sumary>
-    <app-portfolio-sumary title="Ativos" value="10"></app-portfolio-sumary>
+    <div class="portfolio-sumary">
+        <app-portfolio-sumary title="Valor Total" value="$50,000"></app-portfolio-sumary>
+        <app-portfolio-sumary title="Variação" value="+5,25%"></app-portfolio-sumary>
+        <app-portfolio-sumary title="Ativos" value="10"></app-portfolio-sumary>       
+    </div>
+
+    <div>
+        <app-add-investment-button></app-add-investment-button>
+    </div>
 </div>
