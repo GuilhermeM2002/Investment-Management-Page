@@ -14,10 +14,30 @@
         display: flex;
         gap: 32px;
     }
+    h1{
+        font-size: 48px;
+        font-weight: bold;
+        line-height: 36px;
+        color: v.$color-text-primary;
+    }
+    section{
+        h3{
+            font-size: 24px;
+            font-weight: bold;
+            color: v.$color-text-primary;
+            margin-bottom: 24px;
+        }
+        button{
+            background-color: v.$color-background;
+            color: v.$color-primary;
+            border: 1px solid v.$color-primary;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 48px;
+        }    
+    }
+    
 }
-h1{
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 36px;
-    color: v.$color-text-primary;
-}
+
