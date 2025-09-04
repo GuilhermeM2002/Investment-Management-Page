@@ -1,0 +1,32 @@
+.table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.full-width {
+  width: 100%;
+  min-width: 600px;
+}
+
+th.mat-header-cell {
+  font-weight: 600;
+  color: #2F2F2F;
+  background-color: #E8F0FE;
+}
+
+td.mat-cell {
+  padding: 8px 16px;
+  color: #5F6368;
+}
+
+.positive {
+  color: #34A853;
+  font-weight: 500;
+}
+
+.negative {
+  color: #EA4335;
+  font-weight: 500;
+}

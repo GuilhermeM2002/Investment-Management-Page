@@ -1,0 +1,9 @@
+@use "../../../styles/variables" as v;
+div{
+    margin: 24px;
+
+}    
+h3{
+    font-size: 20px;
+    color: v.$color-text-primary;
+}
