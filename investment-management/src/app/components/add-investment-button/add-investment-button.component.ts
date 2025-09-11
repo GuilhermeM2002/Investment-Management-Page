@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { CardComponent } from "../card/card.component";
 
 @Component({
@@ -8,5 +8,9 @@ import { CardComponent } from "../card/card.component";
   styleUrl: './add-investment-button.component.scss'
 })
 export class AddInvestmentButtonComponent {
+  @Output("navigate") onNavigate = new EventEmitter();
 
+  navigate(){
+    this.onNavigate.emit();
+  }
 }

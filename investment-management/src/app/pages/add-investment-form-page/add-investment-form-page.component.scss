@@ -1,0 +1,42 @@
+@use "../../../styles/variables" as v;
+
+h2{
+    font-size: 2rem;
+    margin: 32px;
+    color: v.$color-text-primary;
+}
+p{
+    font-size: 1.2rem;
+    margin: 0 32px 32px 32px;
+    color: v.$color-text-secondary;
+}
+.form-section {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  min-height: 80vh;         
+  padding: 1rem;
+  
+  app-card {
+    width: 100%;
+    max-width: 500px;      
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    button{
+      background-color: v.$color-primary;
+      border: none;
+      border-radius: 8px;
+      height: 36px;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+}
+
