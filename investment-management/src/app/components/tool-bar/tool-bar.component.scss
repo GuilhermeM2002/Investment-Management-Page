@@ -1,0 +1,39 @@
+@use "../../../styles/variables" as v;
+
+.tool-bar-container{
+    display: flex;
+    border-right: 1px solid v.$color-border;
+    flex-direction: column;
+    gap: 32px;        
+    background-color: v.$color-background;
+    color: v.$color-text-secondary;
+    padding: 0 16px;
+    margin-top: 100px;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border: none;
+    border-radius: 12px;
+    background-color: v.$color-background;
+    cursor: pointer;
+    min-width: 230px;
+    min-height: 60px;
+    color: v.$color-text-secondary;
+
+    img{
+        width: 32px;
+        height: 32px;
+    }
+    p{
+        font-family: v.$font-family-primary;
+        font-size: 20px;
+        letter-spacing: 0.15px;
+    }    
+
+    &:hover{
+        border: 1px solid v.$color-primary;
+    }
+}

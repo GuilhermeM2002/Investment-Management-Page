@@ -1,22 +1,29 @@
 <main class="dashboard-container">
+  <aside class="sidebar">
+    <app-tool-bar></app-tool-bar>
+  </aside>
+
+  <section class="dashboard-content">
     <h1>Dashboard</h1>
 
     <section class="portfolio-sumary">
-        <app-portfolio-sumary title="Valor Total" value="$50,000"></app-portfolio-sumary>
-        <app-portfolio-sumary title="Variação" value="+5,25%"></app-portfolio-sumary>
-        <app-portfolio-sumary title="Ativos" value="10"></app-portfolio-sumary>       
+      <app-portfolio-sumary title="Valor Total" value="$50,000"></app-portfolio-sumary>
+      <app-portfolio-sumary title="Variação" value="+5,25%"></app-portfolio-sumary>
+      <app-portfolio-sumary title="Ativos" value="10"></app-portfolio-sumary>       
     </section>
 
     <section class="investments">
-        <app-add-investment-button (navigate)="navigate()"></app-add-investment-button>
-        <app-last-investment></app-last-investment>
+      <app-add-investment-button (navigate)="navigate()"></app-add-investment-button>
+      <app-last-investment></app-last-investment>
     </section>
 
     <section>
-        <app-card>
-            <h3>Importar Arquivo</h3>
-            <button>Importar CSV</button>
-            <button>Importar XLSX</button>
-        </app-card>
+      <app-card>
+        <h3>Importar Arquivo</h3>
+        <button>Importar CSV</button>
+        <button>Importar XLSX</button>
+      </app-card>
     </section>
+  </section>
 </main>
+

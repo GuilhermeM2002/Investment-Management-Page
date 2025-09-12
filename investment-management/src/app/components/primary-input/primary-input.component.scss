@@ -25,9 +25,9 @@
         }
 
         input {
-            border: none;
+            border: 1px solid v.$color-border;
             border-radius: 8px 0 0 8px;
-            background-color: v.$color-card;
+            background-color: v.$color-input-background;
             padding: 12px 0 12px 20px;
             width: 100%;
         }
