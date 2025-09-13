@@ -2,7 +2,6 @@
 
 .tool-bar-container{
     display: flex;
-    border-right: 1px solid v.$color-border;
     flex-direction: column;
     gap: 32px;        
     background-color: v.$color-background;

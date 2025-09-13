@@ -1,42 +1,66 @@
 @use "../../../styles/variables" as v;
 
-h2{
+.add-investment-container {
+  display: flex;
+  min-height: 100vh;
+  background: v.$color-background;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 1rem;
+  background: v.$color-background;
+  border-right: 1px solid v.$color-border;
+}
+
+.form-content {
+  flex: 1;
+  padding: 2rem;
+
+  h2 {
     font-size: 2rem;
-    margin: 32px;
+    margin-bottom: 1rem;
     color: v.$color-text-primary;
-}
-p{
+  }
+
+  p {
     font-size: 1.2rem;
-    margin: 0 32px 32px 32px;
+    margin-bottom: 2rem;
     color: v.$color-text-secondary;
+  }
 }
+
 .form-section {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
-  min-height: 80vh;         
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 150px); // ocupa quase toda a tela, mas com espaço para header/titles
   padding: 1rem;
-  
+
   app-card {
     width: 100%;
-    max-width: 500px;      
+    max-width: 500px;
   }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    
-    button{
+
+    button {
       background-color: v.$color-primary;
       border: none;
       border-radius: 8px;
-      height: 36px;
+      height: 40px;
       font-size: 1rem;
       color: #fff;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.2s ease-in-out;
+
+      &:hover {
+        background-color: v.$color-primary-light;
+      }
     }
   }
 }
-

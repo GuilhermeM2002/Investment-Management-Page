@@ -1,27 +1,67 @@
-<h2>Adicionar Investimento</h2>
-<p>Preencha o formulário abaixo para adicionar um novo investimento ao seu portfólio.</p>
-<section class="form-section">
-    <app-card>
+<main class="add-investment-container">
+  <aside class="sidebar">
+    <app-tool-bar></app-tool-bar>
+  </aside>
+
+  <section class="form-content">
+    <h2>Adicionar Investimento</h2>
+    <p>Preencha o formulário abaixo para adicionar um novo investimento ao seu portfólio.</p>
+
+    <section class="form-section">
+      <app-card>
         <form [formGroup]="investmentForm">
-            <app-primary-input formControlName="assetType" inputName="assetType" type="text" label="Tipo de Ativo"
-                placeholder="Renda fixa"></app-primary-input>
+          <app-primary-input
+            formControlName="assetType"
+            inputName="assetType"
+            type="text"
+            label="Tipo de Ativo"
+            placeholder="Renda fixa">
+          </app-primary-input>
 
-            <app-primary-input formControlName="ticker" inputName="ticker" type="text" label="Ticker"
-                placeholder="TLL"></app-primary-input>
+          <app-primary-input
+            formControlName="ticker"
+            inputName="ticker"
+            type="text"
+            label="Ticker"
+            placeholder="TLL">
+          </app-primary-input>
 
-            <app-primary-input formControlName="quantity" inputName="quantity" type="text" label="Quantidade"
-                placeholder=""></app-primary-input>
+          <app-primary-input
+            formControlName="quantity"
+            inputName="quantity"
+            type="text"
+            label="Quantidade"
+            placeholder="">
+          </app-primary-input>
 
-            <app-primary-input formControlName="buyPrice" inputName="buyPrice" type="text" label="Preço de Compra"
-                placeholder=""></app-primary-input>
+          <app-primary-input
+            formControlName="buyPrice"
+            inputName="buyPrice"
+            type="text"
+            label="Preço de Compra"
+            placeholder="">
+          </app-primary-input>
 
-            <app-primary-input formControlName="currentPrice" inputName="currentPrice" type="text" label="Preço Atual"
-                placeholder=""></app-primary-input>
+          <app-primary-input
+            formControlName="currentPrice"
+            inputName="currentPrice"
+            type="text"
+            label="Preço Atual"
+            placeholder="">
+          </app-primary-input>
 
-            <app-primary-input formControlName="date" inputName="date" type="text" label="Data da Compra"
-                placeholder="10/01/2001"></app-primary-input>
+          <app-primary-input
+            formControlName="date"
+            inputName="date"
+            type="text"
+            label="Data da Compra"
+            placeholder="10/01/2001">
+          </app-primary-input>
 
-            <button (click)=submitForm()>Enviar</button>
+          <button type="submit" (click)="submitForm()">Enviar</button>
         </form>
-    </app-card>
-</section>
+      </app-card>
+    </section>
+  </section>
+</main>
+

@@ -3,6 +3,7 @@ import { CardComponent } from "../../components/card/card.component";
 import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InvestmentService } from '../../services/investment.service';
 import { PrimaryInputComponent } from "../../components/primary-input/primary-input.component";
+import { ToolBarComponent } from "../../components/tool-bar/tool-bar.component";
 
 interface InvestmentForm {
     id: FormControl;
@@ -17,7 +18,7 @@ interface InvestmentForm {
 
 @Component({
   selector: 'app-add-investment-form-page',
-  imports: [CardComponent, ReactiveFormsModule, PrimaryInputComponent],
+  imports: [CardComponent, ReactiveFormsModule, PrimaryInputComponent, ToolBarComponent],
   templateUrl: './add-investment-form-page.component.html',
   styleUrl: './add-investment-form-page.component.scss'
 })
