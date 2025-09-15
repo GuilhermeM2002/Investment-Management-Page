@@ -4,6 +4,7 @@ import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@
 import { InvestmentService } from '../../services/investment.service';
 import { PrimaryInputComponent } from "../../components/primary-input/primary-input.component";
 import { ToolBarComponent } from "../../components/tool-bar/tool-bar.component";
+import { AppLayoutComponent } from "../../components/app-layout/app-layout.component";
 
 interface InvestmentForm {
     id: FormControl;
@@ -18,7 +19,7 @@ interface InvestmentForm {
 
 @Component({
   selector: 'app-add-investment-form-page',
-  imports: [CardComponent, ReactiveFormsModule, PrimaryInputComponent, ToolBarComponent],
+  imports: [CardComponent, ReactiveFormsModule, PrimaryInputComponent, AppLayoutComponent],
   templateUrl: './add-investment-form-page.component.html',
   styleUrl: './add-investment-form-page.component.scss'
 })
