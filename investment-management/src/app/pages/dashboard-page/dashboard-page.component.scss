@@ -1,0 +1,50 @@
+@use "../../../styles/variables" as v;
+
+h1 {
+  font-family: v.$font-family-primary;
+  font-size: 2rem;
+  color: v.$color-text-primary;
+  margin-bottom: 1rem;
+}
+
+.portfolio-sumary {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  app-portfolio-sumary {
+    flex: 1;
+  }
+}
+
+.investments {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+
+  app-add-investment-button,
+  app-last-investment {
+    flex: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid v.$color-border;
+  }
+
+  .portfolio-sumary {
+    flex-direction: column;
+  }
+
+  .investments {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../../../styles/variables" as v;
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: v.$color-text-primary;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: v.$color-text-secondary;
+}
