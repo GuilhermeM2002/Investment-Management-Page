@@ -7,7 +7,7 @@
 
   <section class="form-section">
     <app-card>
-      <form [formGroup]="investmentForm">
+      <form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
         <app-primary-input
           formControlName="assetType"
           inputName="assetType"
@@ -60,9 +60,8 @@
           label="Data da Compra"
           placeholder="10/01/2001"
         >
-        </app-primary-input>
-
-        <button type="submit" (click)="submitForm()">Enviar</button>
+        </app-primary-input>  
+        <button type="submit">Enviar</button>        
       </form>
     </app-card>
   </section>

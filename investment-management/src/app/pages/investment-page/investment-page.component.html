@@ -4,28 +4,7 @@
 
   <section class="investment-section">
     <app-card>
-      <table class="investment-table">
-        <thead>
-          <tr>
-            <th>Tipo de Ativo</th>
-            <th>Ticker</th>
-            <th>Quantidade</th>
-            <th>Preço de Compra</th>
-            <th>Preço Atual</th>
-            <th>Data da Compra</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let investment of investmentList">
-            <td>{{ investment.assetType }}</td>
-            <td>{{ investment.ticker }}</td>
-            <td>{{ investment.quantity }}</td>
-            <td>{{ investment.buyPrice | currency : "BRL" }}</td>
-            <td>{{ investment.currentPrice | currency : "BRL" }}</td>
-            <td>{{ investment.date | date : "dd/MM/yyyy" }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <app-table [investments]="investmentList"></app-table>
     </app-card>
   </section>
 </app-app-layout>

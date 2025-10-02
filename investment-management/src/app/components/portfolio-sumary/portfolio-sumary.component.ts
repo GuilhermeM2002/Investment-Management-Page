@@ -9,5 +9,5 @@ import { CardComponent } from "../card/card.component";
 })
 export class PortfolioSumaryComponent {
   @Input() title: string = '';
-  @Input() value: string = '';
+  @Input() value: number = 0;
 }

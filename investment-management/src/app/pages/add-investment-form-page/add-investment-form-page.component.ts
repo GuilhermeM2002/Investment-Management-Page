@@ -1,13 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
 import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InvestmentService } from '../../services/investment.service';
 import { PrimaryInputComponent } from "../../components/primary-input/primary-input.component";
-import { ToolBarComponent } from "../../components/tool-bar/tool-bar.component";
 import { AppLayoutComponent } from "../../components/app-layout/app-layout.component";
 
 interface InvestmentForm {
-    id: FormControl;
     userId: FormControl;
     assetType: FormControl;
     ticker: FormControl;
@@ -30,7 +28,6 @@ export class AddInvestmentFormPageComponent {
     private investmentService: InvestmentService
   ) {
     this.investmentForm = new FormGroup<InvestmentForm>({
-      id: new FormControl(0, [Validators.required, Validators.min(1)]),
       userId: new FormControl(0, [Validators.required, Validators.min(1)]),
       assetType: new FormControl('', [Validators.required, Validators.minLength(2)]),
       ticker: new FormControl('', [Validators.required, Validators.minLength(1)]),
@@ -41,11 +38,11 @@ export class AddInvestmentFormPageComponent {
     });
   }
 
-  submitForm() {
+  onSubmit() {
+    console.log("Form submitted!", this.investmentForm.value);
     if (this.investmentForm.valid) {
       const formValue = this.investmentForm.value;
       this.investmentService.addInvestment(
-        formValue.id!,
         formValue.userId!,
         formValue.assetType!,
         formValue.ticker!,

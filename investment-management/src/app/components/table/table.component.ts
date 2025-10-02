@@ -1,14 +1,7 @@
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import {MatTableModule} from "@angular/material/table";
-
-export interface Investment {
-  asset: string;
-  quantity: number;
-  price: number;
-  variation: number;
-  total: number;
-}
+import { GetInvestmentResponse } from '../../types/GetInvestmentResponse';
 
 @Component({
   selector: 'app-table',
@@ -18,7 +11,7 @@ export interface Investment {
   providers: [DecimalPipe],
 })
 export class TableComponent {
-  @Input() investments: Investment[] = [];
+  @Input() investments: GetInvestmentResponse[] = [];
 
   displayedColumns: string[] = ['asset', 'quantity', 'price', 'variation', 'total'];
 }

@@ -1,17 +1,32 @@
 import { Component } from '@angular/core';
-import { CardComponent } from "../card/card.component";
-import { TableComponent } from "../table/table.component";
+import { CardComponent } from '../card/card.component';
+import { TableComponent } from '../table/table.component';
+import { GetInvestmentResponse } from '../../types/GetInvestmentResponse';
+import { InvestmentService } from '../../services/investment.service';
 
 @Component({
   selector: 'app-last-investment',
   imports: [CardComponent, TableComponent],
   templateUrl: './last-investment.component.html',
-  styleUrl: './last-investment.component.scss'
+  styleUrl: './last-investment.component.scss',
 })
 export class LastInvestmentComponent {
-  investmentList = [
-    { asset: 'PETR4', quantity: 100, price: 35.50, variation: 0.025, total: 3550 },
-    { asset: 'VALE3', quantity: 50, price: 68.20, variation: -0.011, total: 3410 },
-    { asset: 'ITUB4', quantity: 30, price: 28.75, variation: 0.015, total: 862.5 }
-  ];
+  investmentList: GetInvestmentResponse[] = [];
+  constructor(private investmentService: InvestmentService) {}
+
+  ngOnInit(): void {
+    this.loadInvestments();
+  }
+
+  loadInvestments() {
+    this.investmentService.getInvestmentsByUserId(12345).subscribe({
+      next: (investments) => {
+        console.log('Investments loaded', investments);
+        this.investmentList = investments;
+      },
+      error: (error) => {
+        console.error('Error loading investments', error);
+      },
+    });
+  }
 }
