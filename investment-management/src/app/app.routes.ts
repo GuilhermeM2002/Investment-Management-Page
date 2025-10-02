@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { AddInvestmentFormPageComponent } from './pages/add-investment-form-page/add-investment-form-page.component';
 import { InvestmentPageComponent } from './pages/investment-page/investment-page.component';
+import { AlertPageComponent } from './pages/alert-page/alert-page.component';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,9 @@ export const routes: Routes = [
     {
         path: 'investments',
         component: InvestmentPageComponent
+    },
+    {
+        path: 'alerts',
+        component: AlertPageComponent
     }
 ];

@@ -1,0 +1,16 @@
+<app-app-layout>
+  <h2 class="alerts-title">Alerts</h2>
+
+  <div class="alerts-container">
+    @for (alert of alertList; track $index) {
+      <div class="alert-card">
+        <div class="alert-header">
+          <span class="user-email">{{ alert.userEmail }}</span>
+          <span class="alert-date">{{ alert.date | date: 'short' }}</span>
+        </div>
+        <p class="alert-content">{{ alert.content }}</p>
+      </div>
+    }
+  </div>
+</app-app-layout>
+

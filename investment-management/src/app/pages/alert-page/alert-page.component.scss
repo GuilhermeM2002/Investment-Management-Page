@@ -1,0 +1,51 @@
+@use "../../../styles/variables" as v;
+
+.alerts-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: v.$color-text-primary;
+}
+
+.alerts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alert-card {
+  background: v.$color-background;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.user-email {
+  font-weight: 500;
+  color: v.$color-text-primary;
+}
+
+.alert-date {
+  font-size: 0.85rem;
+  color: v.$color-text-secondary;
+}
+
+.alert-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: v.$color-text-secondary;
+  white-space: pre-line;
+}
