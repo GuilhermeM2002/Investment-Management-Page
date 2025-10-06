@@ -8,6 +8,8 @@ import { LastInvestmentComponent } from '../../components/last-investment/last-i
 import { InvestmentService } from '../../services/investment.service';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { GetInvestmentResponse } from '../../types/GetInvestmentResponse';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -23,14 +25,29 @@ import { Observable } from 'rxjs';
   styleUrl: './dashboard-page.component.scss',
 })
 export class DashboardPageComponent {
+  portfolioValue$: Observable<number>;
+  variation$: Observable<number>;
+  investmentsList: GetInvestmentResponse[] = [];
+
   constructor(
     private router: Router,
     private investmentService: InvestmentService
   ) {
     this.portfolioValue$ = this.investmentService.getPortfolioValue(12345);
+    this.variation$ = this.investmentService.getInvestmentsByUserId(12345).pipe(
+      map((data) => {
+        const totalBuyPrice = data.reduce(
+          (acc, inv) => acc + inv.buyPrice * inv.quantity,
+          0
+        );
+        const totalCurrentPrice = data.reduce(
+          (acc, inv) => acc + inv.currentPrice * inv.quantity,
+          0
+        );
+        return ((totalCurrentPrice - totalBuyPrice) / totalBuyPrice) * 100;
+      })
+    );
   }
-
-  portfolioValue$: Observable<number>;
 
   navigate() {
     this.router.navigate(['add-investment']);

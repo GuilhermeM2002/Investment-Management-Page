@@ -7,10 +7,15 @@
         title="Valor Total"
         [value]="(portfolioValue$ | async) ?? 0"
       ></app-portfolio-sumary>
+
       <app-portfolio-sumary
         title="Variação"
+        [value]="(variation$ | async) ?? 0"
       ></app-portfolio-sumary>
-      <app-portfolio-sumary title="Ativos"></app-portfolio-sumary>
+
+      <app-portfolio-sumary 
+        title="Ativos"
+        [value]="investmentsList.length"></app-portfolio-sumary>
     </section>
 
     <section class="investments">
