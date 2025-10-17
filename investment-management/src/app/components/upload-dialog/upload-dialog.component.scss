@@ -1,0 +1,23 @@
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+  text-align: center;
+
+  input[type='file'] {
+    border: 1px dashed #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .message {
+    color: #333;
+    font-size: 14px;
+  }
+}
+

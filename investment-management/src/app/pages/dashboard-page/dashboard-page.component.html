@@ -4,18 +4,18 @@
   <div class="top-content">
     <section class="portfolio-sumary">
       <app-portfolio-sumary
-        title="Valor Total"
+        title="Valor Total (R$)"
         [value]="(portfolioValue$ | async) ?? 0"
       ></app-portfolio-sumary>
 
       <app-portfolio-sumary
-        title="Variação"
+        title="Variação Total"
         [value]="(variation$ | async) ?? 0"
       ></app-portfolio-sumary>
 
       <app-portfolio-sumary 
-        title="Ativos"
-        [value]="investmentsList.length"></app-portfolio-sumary>
+        title="Quantidade de Ativos"
+        [value]="(quantityOfInvestments$ | async) ?? 0"></app-portfolio-sumary>
     </section>
 
     <section class="investments">
@@ -29,8 +29,7 @@
   <section>
     <app-card>
       <h3>Importar Arquivo</h3>
-      <button>Importar CSV</button>
-      <button>Importar XLSX</button>
+      <button (click)="openUploadDialog()" >Importar</button>
     </app-card>
   </section>
 </app-app-layout>

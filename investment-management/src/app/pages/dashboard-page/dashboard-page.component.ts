@@ -10,6 +10,8 @@ import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { GetInvestmentResponse } from '../../types/GetInvestmentResponse';
+import { MatDialog } from '@angular/material/dialog';
+import { UploadDialogComponent } from '../../components/upload-dialog/upload-dialog.component';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -27,14 +29,21 @@ import { GetInvestmentResponse } from '../../types/GetInvestmentResponse';
 export class DashboardPageComponent {
   portfolioValue$: Observable<number>;
   variation$: Observable<number>;
-  investmentsList: GetInvestmentResponse[] = [];
+  investmentsList$: Observable<GetInvestmentResponse[]>;
+  quantityOfInvestments$: Observable<number>;
 
   constructor(
     private router: Router,
-    private investmentService: InvestmentService
+    private investmentService: InvestmentService,
+    private dialog: MatDialog
   ) {
     this.portfolioValue$ = this.investmentService.getPortfolioValue(12345);
-    this.variation$ = this.investmentService.getInvestmentsByUserId(12345).pipe(
+    this.investmentsList$ =
+      this.investmentService.getInvestmentsByUserId(12345);
+    this.quantityOfInvestments$ = this.investmentsList$.pipe(
+      map((data) => data.length)
+    );
+    this.variation$ = this.investmentsList$.pipe(
       map((data) => {
         const totalBuyPrice = data.reduce(
           (acc, inv) => acc + inv.buyPrice * inv.quantity,
@@ -44,9 +53,24 @@ export class DashboardPageComponent {
           (acc, inv) => acc + inv.currentPrice * inv.quantity,
           0
         );
-        return ((totalCurrentPrice - totalBuyPrice) / totalBuyPrice) * 100;
+        const variation =
+          ((totalCurrentPrice - totalBuyPrice) / totalBuyPrice) * 100;
+        return parseFloat(variation.toFixed(1));
       })
     );
+  }
+
+  openUploadDialog(): void {
+    const dialogRef = this.dialog.open(UploadDialogComponent, {
+      width: '400px',
+      disableClose: true,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Upload concluído com sucesso');
+      }
+    });
   }
 
   navigate() {

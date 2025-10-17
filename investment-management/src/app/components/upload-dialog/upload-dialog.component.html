@@ -1,0 +1,22 @@
+<h2>Importar Extrato de Investimentos</h2>
+
+<div class="upload-container">
+  <input type="file" (change)="onFileSelected($event)" />
+  <p *ngIf="selectedFile">Arquivo selecionado: <strong>{{ selectedFile.name }}</strong></p>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="uploadFile()"
+    [disabled]="!selectedFile || isUploading"
+  >
+    {{ isUploading ? 'Enviando...' : 'Enviar' }}
+  </button>
+
+  <button mat-button color="warn" (click)="closeDialog()">Cancelar</button>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
+
+
+
