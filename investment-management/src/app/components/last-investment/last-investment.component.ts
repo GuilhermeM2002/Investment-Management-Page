@@ -3,10 +3,11 @@ import { CardComponent } from '../card/card.component';
 import { TableComponent } from '../table/table.component';
 import { GetInvestmentResponse } from '../../types/GetInvestmentResponse';
 import { InvestmentService } from '../../services/investment.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-last-investment',
-  imports: [CardComponent, TableComponent],
+  imports: [CommonModule, CardComponent, TableComponent],
   templateUrl: './last-investment.component.html',
   styleUrl: './last-investment.component.scss',
 })
