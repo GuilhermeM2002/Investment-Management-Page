@@ -28,7 +28,7 @@ export class AddInvestmentFormPageComponent {
     private investmentService: InvestmentService
   ) {
     this.investmentForm = new FormGroup<InvestmentForm>({
-      userId: new FormControl(0, [Validators.required, Validators.min(1)]),
+      userId: new FormControl(12345, [Validators.required, Validators.min(1)]),
       assetType: new FormControl('', [Validators.required, Validators.minLength(2)]),
       ticker: new FormControl('', [Validators.required, Validators.minLength(1)]),
       quantity: new FormControl(0, [Validators.required, Validators.min(1)]),
