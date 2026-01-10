@@ -3,6 +3,7 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { AddInvestmentFormPageComponent } from './pages/add-investment-form-page/add-investment-form-page.component';
 import { InvestmentPageComponent } from './pages/investment-page/investment-page.component';
 import { AlertPageComponent } from './pages/alert-page/alert-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'alerts',
         component: AlertPageComponent
+    },
+    {
+        path: 'login',
+        component: LoginPageComponent
     }
 ];
