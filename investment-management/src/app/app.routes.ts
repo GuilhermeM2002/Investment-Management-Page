@@ -4,6 +4,7 @@ import { AddInvestmentFormPageComponent } from './pages/add-investment-form-page
 import { InvestmentPageComponent } from './pages/investment-page/investment-page.component';
 import { AlertPageComponent } from './pages/alert-page/alert-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginPageComponent
+    },
+    {
+        path: 'signup',
+        component: SignupPageComponent
     }
 ];
