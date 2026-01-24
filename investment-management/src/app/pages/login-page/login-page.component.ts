@@ -18,27 +18,40 @@ interface LoginForm {
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
-    loginForm!: FormGroup<LoginForm>;
+  loginForm!: FormGroup<LoginForm>;
 
   constructor(
     private router: Router,
     private loginService: LoginService,
     private toastService: ToastrService
-  ){
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
 
-  submit(){
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success("Success on Login!"),
-      error: () => this.toastService.error("Unexpected error!"),
-    })
+  submit() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    const { email, password } = this.loginForm.value;
+
+    this.loginService.login(email!, password!).subscribe({
+      next: (response) => {
+        this.toastService.success('Success on Login!');
+        sessionStorage.setItem('auth-token', response.token);
+        this.router.navigate(['/dashboard']);
+      },
+      error: () => {
+        this.toastService.error('Invalid email or password');
+      }
+    });
   }
 
-  navigate(){
+
+  navigate() {
     this.router.navigate(["signup"])
   }
 }
